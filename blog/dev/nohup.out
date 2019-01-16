@@ -1,2 +1,25 @@
 INFO  Start processing
 INFO  Hexo is running at http://localhost:1234 . Press Ctrl+C to stop.
+ERROR Local hexo not found in /blog/blog/dev
+ERROR Try running: 'npm install hexo --save'
+INFO  Start processing
+INFO  Hexo is running at http://localhost:1234 . Press Ctrl+C to stop.
+WARN  No layout: index.html
+WARN  No layout: index.html
+WARN  No layout: index.html
+WARN  No layout: index.html
+WARN  No layout: index.html
+WARN  No layout: index.html
+WARN  No layout: index.html
+WARN  No layout: index.html
+WARN  No layout: index.html
+WARN  No layout: index.html
+INFO  Start processing
+INFO  Hexo is running at http://localhost:1234 . Press Ctrl+C to stop.
+WARN  No layout: index.html
+WARN  No layout: index.html
+WARN  No layout: index.html
+WARN  No layout: index.html
+WARN  No layout: index.html
+WARN  No layout: index.html
+WARN  No layout: index.html
