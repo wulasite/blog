@@ -19,14 +19,14 @@ Centos下安装ELK
    [kibana](https://www.elastic.co/downloads/kibana )
 
 3. 将  elasticsearch的包移动到/usr/elk目录下，解压。然后cd进目录，运行  bin/elasticsearch  就会发现报错， 
-   ![](http://a.wulasite.me/mdimage/elk/elk1.png)
+   ![](https://qqx.im/mdimage/elk/elk1.png)
 
    那就新建个用户,并且将该目录的拥有者改为该用户 chown xx:xx -R /usr/elk/elasticsearch  再启动  bin/elasticsearch  可以正常启动，但是监听的地址是127.0.0.1，看了下配置文件，修改为0.0.0.0即可。  
-   ![](http://a.wulasite.me/mdimage/elk/elk2.png)
+   ![](https://qqx.im/mdimage/elk/elk2.png)
 
    但是报错了，
 
-   ![](http://a.wulasite.me/mdimage/elk/elk3.png)
+   ![](https://qqx.im/mdimage/elk/elk3.png)
 
    搜索了一下，发现装这个的常见错误很多，一般都是配置不够，按照教程修改一下就好了。 
 
@@ -40,10 +40,10 @@ Centos下安装ELK
 
    然后退出重新该用户进入,运行  ulimit -Hn  
 
-   ![](http://a.wulasite.me/mdimage/elk/elk4.png)
+   ![](https://qqx.im/mdimage/elk/elk4.png)
 
    启动即可 
-   ![](http://a.wulasite.me/mdimage/elk/elk5.png)
+   ![](https://qqx.im/mdimage/elk/elk5.png)
 
    
 
@@ -90,7 +90,7 @@ Centos下安装ELK
    ./bin/logstash -f config/input-output.conf
 
    成功后最后会显示
-   ![](http://a.wulasite.me/mdimage/elk/elk6.png)
+   ![](https://qqx.im/mdimage/elk/elk6.png)
 
 5. 装Kibana  
    将下载好的Kibana移动/usr/elk的目录下，解压，修改配置文件config/kibana.yml  
@@ -100,13 +100,13 @@ Centos下安装ELK
    这是es的服务器地址  
    启动  bin/kibana  
    访问该ip的5601端口，可看到  
-   ![](http://a.wulasite.me/mdimage/elk/elk7.png)点击左边菜单栏的Discover，会出现
-   ![](http://a.wulasite.me/mdimage/elk/elk8.png)
+   ![](https://qqx.im/mdimage/elk/elk7.png)点击左边菜单栏的Discover，会出现
+   ![](https://qqx.im/mdimage/elk/elk8.png)
 
    点击Check for new data创建新的pattern
 
    第一步输入匹配的模式
-   ![](http://a.wulasite.me/mdimage/elk/elk9.png)
+   ![](https://qqx.im/mdimage/elk/elk9.png)
 
    第二步选择时间过滤器。 
 
@@ -176,6 +176,6 @@ Centos下安装ELK
    ```
 
     带上自动更新配置文件参数就可以在后台运行了，不用重启。  然后在切换到filebeat文件，运行filebeat  ./filebeat -e -c filebeat.yml -d "publish"  可以看到很多输出在上面，然后去kibana看，跟上面一样增加httpd-*的index，然后可看到。    
-   ![](http://a.wulasite.me/mdimage/elk/elk10.png)
+   ![](https://qqx.im/mdimage/elk/elk10.png)
 
      
