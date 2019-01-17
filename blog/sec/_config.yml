@@ -81,7 +81,7 @@ deploy:
   type:
     
 jsonContent:
-    meta: true
+    meta: false
     pages: false
     posts:
       title: true
