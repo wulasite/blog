@@ -80,11 +80,10 @@ theme: yilia
 deploy:
   type:
 
-favicon: /favicon.ico
 
 
 jsonContent:
-    meta: false
+    meta: true
     pages: false
     posts:
       title: true
