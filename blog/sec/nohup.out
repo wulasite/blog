@@ -6,3 +6,51 @@ INFO  Start processing
 INFO  Hexo is running at http://localhost:1235 . Press Ctrl+C to stop.
 INFO  Start processing
 INFO  Hexo is running at http://localhost:1235 . Press Ctrl+C to stop.
+INFO  Start processing
+INFO  Files loaded in 798 ms
+INFO  Generated: index.html
+INFO  Generated: archives/index.html
+INFO  Generated: fancybox/blank.gif
+INFO  Generated: fonts/default-skin.b257fa.svg
+INFO  Generated: img/default-skin.png
+INFO  Generated: fancybox/jquery.fancybox.pack.js
+INFO  Generated: fancybox/fancybox_loading.gif
+INFO  Generated: fancybox/fancybox_loading@2x.gif
+INFO  Generated: fancybox/fancybox_overlay.png
+INFO  Generated: fancybox/fancybox_sprite.png
+INFO  Generated: fancybox/fancybox_sprite@2x.png
+INFO  Generated: fonts/iconfont.16acc2.ttf
+INFO  Generated: fonts/iconfont.45d7ee.svg
+INFO  Generated: fonts/iconfont.8c627f.woff
+INFO  Generated: fonts/iconfont.b322fa.eot
+INFO  Generated: fonts/tooltip.4004ff.svg
+INFO  Generated: img/preloader.gif
+INFO  Generated: img/scrollbar_arrow.png
+INFO  Generated: archives/2017/09/index.html
+INFO  Generated: js/script.js
+INFO  Generated: fancybox/helpers/jquery.fancybox-buttons.css
+INFO  Generated: archives/2017/10/index.html
+INFO  Generated: fancybox/jquery.fancybox.css
+INFO  Generated: fancybox/helpers/jquery.fancybox-buttons.js
+INFO  Generated: fancybox/helpers/jquery.fancybox-media.js
+INFO  Generated: fancybox/helpers/jquery.fancybox-thumbs.css
+INFO  Generated: fancybox/helpers/jquery.fancybox-thumbs.js
+INFO  Generated: archives/2017/index.html
+INFO  Generated: css/fonts/fontawesome-webfont.eot
+INFO  Generated: css/style.css
+INFO  Generated: css/fonts/fontawesome-webfont.svg
+INFO  Generated: css/fonts/fontawesome-webfont.woff
+INFO  Generated: fancybox/helpers/fancybox_buttons.png
+INFO  Generated: css/images/banner.jpg
+INFO  Generated: fancybox/jquery.fancybox.js
+INFO  Generated: css/fonts/FontAwesome.otf
+INFO  Generated: css/fonts/fontawesome-webfont.ttf
+INFO  Generated: slider.e37972.js
+INFO  Generated: 2017/10/12/shianbei2017Writeup/index.html
+INFO  Generated: 2017/09/20/2017铁人三项华中区域选拔赛总结/index.html
+INFO  Generated: 2017/09/20/图片爬虫/index.html
+INFO  Generated: main.0cf68a.css
+INFO  Generated: main.0cf68a.js
+INFO  Generated: mobile.992cbe.js
+INFO  44 files generated in 2.53 s
+INFO  Hexo is watching for file changes. Press Ctrl+C to exit.
