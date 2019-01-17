@@ -8,6 +8,7 @@ menu:
 subnav:
   github: "https://github.com/wulasite/"
   rss: "atom.xml"
+  acfun: "https://gitee.com/wulasite"
   #qq: "#"
   #weixin: "#"
   #jianshu: "#"
@@ -63,7 +64,7 @@ top: true
 # Miscellaneous
 baidu_analytics: ''
 google_analytics: ''
-favicon: https://qqx.im/favicon.ico
+favicon: http://qqx.im/favicon.ico
 
 #你的头像url
 avatar: https://qqx.im/mdimage/avator.jpg
@@ -123,3 +124,5 @@ friends:
 
 
 aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
+
+
