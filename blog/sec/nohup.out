@@ -54,3 +54,44 @@ INFO  Generated: main.0cf68a.js
 INFO  Generated: mobile.992cbe.js
 INFO  44 files generated in 2.53 s
 INFO  Hexo is watching for file changes. Press Ctrl+C to exit.
+ERROR Local hexo not found in /blog/blog/sec
+ERROR Try running: 'npm install hexo --save'
+ERROR Local hexo not found in /blog/blog/sec
+ERROR Try running: 'npm install hexo --save'
+INFO  Start processing
+INFO  Files loaded in 1.49 s
+INFO  Generated: content.json
+INFO  Generated: index.html
+INFO  Generated: fonts/iconfont.b322fa.eot
+INFO  Generated: img/default-skin.png
+INFO  Generated: fonts/iconfont.8c627f.woff
+INFO  Generated: fonts/tooltip.4004ff.svg
+INFO  Generated: fonts/iconfont.45d7ee.svg
+INFO  Generated: img/preloader.gif
+INFO  Generated: img/scrollbar_arrow.png
+INFO  Generated: fonts/iconfont.16acc2.ttf
+INFO  Generated: archives/index.html
+INFO  Generated: fonts/default-skin.b257fa.svg
+INFO  Generated: archives/2017/index.html
+INFO  Generated: archives/2019/index.html
+INFO  Generated: archives/2017/09/index.html
+INFO  Generated: archives/2017/10/index.html
+INFO  Generated: archives/2019/01/index.html
+INFO  Generated: slider.e37972.js
+INFO  Generated: 2019/01/25/DVWA搭建教程/index.html
+INFO  Generated: 2017/10/12/shianbei2017Writeup/index.html
+INFO  Generated: 2017/09/20/2017铁人三项华中区域选拔赛总结/index.html
+INFO  Generated: 2017/09/20/图片爬虫/index.html
+INFO  Generated: mobile.992cbe.js
+INFO  Generated: main.0cf68a.js
+INFO  Generated: main.0cf68a.css
+INFO  25 files generated in 2.41 s
+INFO  Hexo is watching for file changes. Press Ctrl+C to exit.
+INFO  Start processing
+INFO  Files loaded in 2.8 s
+INFO  0 files generated in 14 s
+INFO  Hexo is watching for file changes. Press Ctrl+C to exit.
+INFO  Start processing
+INFO  Files loaded in 564 ms
+INFO  0 files generated in 1.34 s
+INFO  Hexo is watching for file changes. Press Ctrl+C to exit.

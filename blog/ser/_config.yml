@@ -1,9 +1,18 @@
 # Header
 
+# Header
+title: 运维区
+subtitle:
+description:
+keywords:
+author: cocostar
+language:
+timezone:
+
 menu:
   主页: https://qqx.im/
   这里什么都没有: /
-
+theme: yilia
 # SubNav
 subnav:
   github: "https://github.com/wulasite/"
@@ -123,6 +132,24 @@ friends:
   hcyue: https://hcyue.me/
 
 
+jsonContent:
+    meta: false
+    pages: false
+    posts:
+      title: true
+      date: true
+      path: true
+      text: false
+      raw: false
+      content: false
+      slug: false
+      updated: false
+      comments: false
+      link: false
+      permalink: false
+      excerpt: false
+      categories: false
+      tags: true
 aboutme: 很惭愧<br><br>只做了一点微小的工作<br>谢谢大家
 
 
