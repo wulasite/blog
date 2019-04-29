@@ -330,7 +330,7 @@ echo $a;
 
 得到反序列字符串，再与EzblrbNS拼接，再得到它的md5值，然后将反序列字符串与md5值拼接，得到cookie,再urlencode，提交得到flag
 
-![](./key.png)
+![](https://qqx.im/mdimage/ddctf2019/key.png)
 
 
 
@@ -340,11 +340,11 @@ echo $a;
 
 进入题目，是个登录框，有注册按钮，按照题目提示，注册然后登录
 
-![](./chiji.png)
+![](https://qqx.im/mdimage/ddctf2019/chiji.png)
 
 点击购买，购买门票之后在订单列表中，有个价格2k的门票要支付，但是我只有100块钱啊！抓包看了下，价格是可以自己修改的。所以想了下，思路往竞争方向想，但是又没有卖的，所以又往溢出的方向想，试了一下各种溢出的上限，发现是unsigned long,上限4294967295。所以 提交http://117.51.147.155:5050/ctf/api/buy_ticket?ticket_price=4294967296，就可以0元购买了。然后进入杀鸡界面
 
-![](./ticket.png)
+![](https://qqx.im/mdimage/ddctf2019/ticket.png)
 
 试了试去，就想出个注册小号给大号杀，
 
@@ -472,13 +472,13 @@ if __name__ == '__main__':
 
 ​	一开始就是一个简单的上传图片的界面，上传之后提示
 
-![](./upload1.jpg)
+![](https://qqx.im/mdimage/ddctf2019/upload1.jpg)
 
 在尝试通过burp增加phpinfo()之后无果。(假装我当时做出来了）正常思路应该是把上传的图片下下来，然后查看hex，对比发现不一样了，然后文件头有gd-jpeg字样。
 
 查看hex
 
-![](./upload2.jpg)
+![](https://qqx.im/mdimage/ddctf2019/upload2.jpg)
 
 搜索一下，发现这是一个PHP的一个GD库，渲染图片用的。然后我再一搜，php GD漏洞，搜到
 
@@ -488,15 +488,15 @@ if __name__ == '__main__':
 
 原理解释在[github](<https://github.com/fakhrizulkifli/Defeating-PHP-GD-imagecreatefromjpeg/blob/master/README.md>)上有。主要是
 
-![](./upload3.jpg)
+![](https://qqx.im/mdimage/ddctf2019/upload3.jpg)
 
-在Scan header正后方修改，后面添加的内容就不会被修改了，注意一定是正后方，并且是已经转换过的一次。
+在Scan header**正后方**修改，后面添加的内容就不会被修改了，注意一定是正后方，并且是已经转换过的一次。
 
 然后在burpsuite我发现在
 
-![](upload4.jpg)
+![](https://qqx.im/mdimage/ddctf2019/upload4.jpg)
 
-第二个wxzy后面的问号的后面的空格的后面，比较绕，看图。直接添加，得到flag。
+**第二个wxzy**后面的**问号**的后面的空格的后面，比较绕，看图。直接添加，得到flag。
 
 这题主要就是考察一个GD库渲染的漏洞，通常还是要结合实际，比如上传检测的时候文件头，然后又会做GD渲染。
 
@@ -771,11 +771,11 @@ payload
 
 看下会发生什么
 
-![](./event1.jpg)
+![](https://qqx.im/mdimage/ddctf2019/event1.jpg)
 
 首先看action1=trigger_event#_handler，eval之后其实后面就被截断、注释掉了，所以就可以调用trigger_event，将buy和get_flag先入队。最后flag就在session里，flask的session解密在[P师傅](<https://www.leavesongs.com/PENETRATION/client-session-security.html>)
 
-![](event2.jpg)
+![](https://qqx.im/mdimage/ddctf2019/event2.jpg)
 
 
 
@@ -893,7 +893,7 @@ tmp_dic = {'local_address': Local_Address, 'Process_name': 'mysqld'}
 
 然后再部署一个恶意的mysql服务器去读靶机的敏感文件，/etc/passwd ~/.mysql_history ~/.bashrc等，其实是在~/.mysql_history。
 
-![](mysql.jpg)
+![](https://qqx.im/mdimage/ddctf2019/mysql.jpg)
 
 参考：[原理](https://www.anquanke.com/post/id/106488)和[脚本](https://github.com/allyshka/Rogue-MySql-Server)
 
