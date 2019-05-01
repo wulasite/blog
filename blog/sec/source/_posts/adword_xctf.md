@@ -1,7 +1,7 @@
 ---
 title: XCTF攻防世界web部分writeup
 date: 2019-05-01 18:15:34
-tags:writeup
+tags: writeup
 ---
 
 adword里面题目很多，挑一些题目来记录
