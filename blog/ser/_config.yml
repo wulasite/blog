@@ -10,7 +10,7 @@ language:
 timezone:
 
 menu:
-  主页: https://qqx.im/
+  主页: https://wulasite.top/
   这里什么都没有: /
 theme: yilia
 # SubNav
@@ -73,10 +73,10 @@ top: true
 # Miscellaneous
 baidu_analytics: ''
 google_analytics: ''
-favicon: http://qqx.im/favicon.ico
+favicon: http://wulasite.top/favicon.ico
 
 #你的头像url
-avatar: https://qqx.im/mdimage/avator.jpg
+avatar: https://wulasite.top/mdimage/avator.jpg
 
 #是否开启分享
 share_jia: true

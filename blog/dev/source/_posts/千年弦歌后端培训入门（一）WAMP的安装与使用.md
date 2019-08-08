@@ -5,7 +5,7 @@ tags: PHP
 ---
 
 
-1. [千年弦歌后端培训入门（一）WAMP的安装与使用](https://dev.qqx.im/2019/01/23/%E5%8D%83%E5%B9%B4%E5%BC%A6%E6%AD%8C%E5%90%8E%E7%AB%AF%E5%9F%B9%E8%AE%AD%E5%85%A5%E9%97%A8%EF%BC%88%E4%B8%80%EF%BC%89WAMP%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/)
+1. [千年弦歌后端培训入门（一）WAMP的安装与使用](https://dev.wulasite.top/2019/01/23/%E5%8D%83%E5%B9%B4%E5%BC%A6%E6%AD%8C%E5%90%8E%E7%AB%AF%E5%9F%B9%E8%AE%AD%E5%85%A5%E9%97%A8%EF%BC%88%E4%B8%80%EF%BC%89WAMP%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/)
 2. [后端教程资料](https://gitlab.qnxg.net/qqx/backend_class)
 
 
@@ -21,15 +21,15 @@ WAMP是啥？在开始之前需要了解一下这个之后会经常使用的软�
 
 直接在[百度](https://www.baidu.com/)上搜索WAMP，就会出现如下
 
-![](https://qqx.im/mdimage/wamp/baidu.png)
+![](https://wulasite.top/mdimage/wamp/baidu.png)
 
 一个WAMPSERVER就是了。点进去就会看到
 
-![](https://qqx.im/mdimage/wamp/start.png)
+![](https://wulasite.top/mdimage/wamp/start.png)
 
 如果点不进去就直接去 [SourceForge](https://sourceforge.net/projects/wampserver/files/) 下载，进得去的就点击红圈的字样，会跳到下面下载的地方
 
-![](https://qqx.im/mdimage/wamp/download.png)
+![](https://wulasite.top/mdimage/wamp/download.png)
 
 下面两个黄色的button似乎是摆设，所以点击进[SourceForge](https://sourceforge.net/projects/wampserver/files/)下载吧
 
@@ -43,19 +43,19 @@ WAMP是啥？在开始之前需要了解一下这个之后会经常使用的软�
 
 安装完成后直接双击桌面的wampserver64启用即可，成功启用的标志是图标变成绿色的
 
-![](https://qqx.im/mdimage/wamp/status.png)
+![](https://wulasite.top/mdimage/wamp/status.png)
 
 黄色说明有的服务没成功启用，红色代表都没启用。
 
 接下来左键点击绿色图标，列出功能列表，就可以看到一些功能，这个列表主要是管理这几个软件的，功能应有尽有，不管是管理虚拟主机的，还是apache php mysql都有
 
-![](https://qqx.im/mdimage/wamp/function.png)
+![](https://wulasite.top/mdimage/wamp/function.png)
 
 比如localhost就是用之前安装的时候设置的默认浏览器访问localhost，一般是IE
 
 
 
-![](https://qqx.im/mdimage/wamp/localhost.png)
+![](https://wulasite.top/mdimage/wamp/localhost.png)
 
 刚开始安装会显示wamp的主页，但是我这里的index.php替换了。所以是上图。
 
@@ -67,10 +67,10 @@ WAMP是啥？在开始之前需要了解一下这个之后会经常使用的软�
 ?>
 ```
 
-![](https://qqx.im/mdimage/wamp/hellocode.png)
+![](https://wulasite.top/mdimage/wamp/hellocode.png)
 
 然后在浏览器访问 [http://localhost/hello.php](http://localhost/hello.php)
 
 即可看到hello world!
 
-![](https://qqx.im/mdimage/wamp/hello.png)
+![](https://wulasite.top/mdimage/wamp/hello.png)

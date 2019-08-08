@@ -12,13 +12,13 @@ adword里面题目很多，挑一些题目来记录
 
 进入题目界面
 
-![](https://qqx.im/mdimage/adword/paper.png)
+![](https://wulasite.top/mdimage/adword/paper.png)
 
 随便点点之后，发现是一些网站。对付这种，使用Burpsuite的**Send to Spiders**功能
 
 
 
-![](https://qqx.im/mdimage/adword/spider.png)
+![](https://wulasite.top/mdimage/adword/spider.png)
 
 可以看到有login.php和admin.php和robots.txt，访问robots.txt里面也是login.php和admin.php,所以分别访问login.php和admin.php
 
@@ -111,7 +111,7 @@ highlight_file('login.php');
 
 > usr=admin' union select 1,name from sqlite_master where type='table' limit 0,1--&pw=1
 
-![](https://qqx.im/mdimage/adword/attack.png)
+![](https://wulasite.top/mdimage/adword/attack.png)
 
 这里只有一个表，如果想报全部的表可以用burpsuite修改limit后面的参数。
 
@@ -322,7 +322,7 @@ def download_pdf(url):
 
 访问题目界面，是个论坛
 
-![](https://qqx.im/mdimage/adword/wtf.png)
+![](https://wulasite.top/mdimage/adword/wtf.png)
 
 探索了一下，有几个点
 
@@ -419,11 +419,11 @@ http://111.198.29.45:44741/post.wtf?post=../
 
 读取上一层的文件
 
-![](https://qqx.im/mdimage/adword/wtf2.png)
+![](https://wulasite.top/mdimage/adword/wtf2.png)
 
 内容过多，搜索一下flag关键字
 
-![](https://qqx.im/mdimage/adword/get_flag1.png)
+![](https://wulasite.top/mdimage/adword/get_flag1.png)
 
 ```bash
 $ if is_logged_in && [[ "${COOKIES['USERNAME']}" = 'admin' ]] && [[ ${username} = 'admin' ]] 
@@ -448,7 +448,7 @@ echo "${token}" >> "users/${user_id}";
 ?post=../users
 ```
 
-![](https://qqx.im/mdimage/adword/admin_token.png)
+![](https://wulasite.top/mdimage/adword/admin_token.png)
 
 密码破解不出，用修改cookie的方式
 
@@ -458,7 +458,7 @@ Cookie: USERNAME=admin; TOKEN=uYpiNNf/X0/0xNfqmsuoKFEtRlQDwNbS2T6LdHDRWH5p3x4bL4
 
 然后访问profile得到flag1
 
-![](https://qqx.im/mdimage/adword/admin_get_flag.png)
+![](https://wulasite.top/mdimage/adword/admin_get_flag.png)
 
 读了一下其它文件，发现没有get_flag2，所以应该就是要执行命令了。
 
@@ -500,7 +500,7 @@ text=123456&submit=
 
 然后访问users_lookup/1.wtf
 
-![](https://qqx.im/mdimage/adword/get_flag2.png)
+![](https://wulasite.top/mdimage/adword/get_flag2.png)
 
 
 
@@ -520,7 +520,7 @@ FUZZ了一番发现，没有SQL注入，注册的时候没有检查用户是否�
 
 那看来得找管理员账户，但是又不是admin。测试一下登录功能也没有发现SQL注入。但是还有个忘记密码的功能。
 
-![](https://qqx.im/mdimage/adword/cetc_forget.png)
+![](https://wulasite.top/mdimage/adword/cetc_forget.png)
 
 测试了一波发现有SQL注入，并且没有啥过滤。
 
@@ -630,7 +630,7 @@ if ($_SERVER['HTTP_X_FORWARDED_FOR'] === '127.0.0.1') {
 
 访问题目界面
 
-![](https://qqx.im/mdimage/adword/guess_upload.png)
+![](https://wulasite.top/mdimage/adword/guess_upload.png)
 
 提示
 
@@ -727,7 +727,7 @@ setcookie('SESSI0N', $hash, time() + 3600);
 
 实践过程中遇到的一个比较大的问题就是不知道服务器php版本，只能一个一个的试了
 
-![](https://qqx.im/mdimage/adword/guess_back.png)
+![](https://wulasite.top/mdimage/adword/guess_back.png)
 
 返回的
 

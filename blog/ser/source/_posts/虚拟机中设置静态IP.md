@@ -16,11 +16,11 @@ P是为了在相通的局域网下能访问到虚拟机中的主机。做了桥�
 
 2. 更改虚拟机配置
    在VM菜单的编辑-虚拟网络编辑器中更改设置，如图：
-   ![](https://qqx.im/mdimage/vmNet.jpg)
+   ![](https://wulasite.top/mdimage/vmNet.jpg)
 
 
    如果不是以管理员身份运行VM就会需要提供管理员权限才能更改设置。
-![](https://qqx.im/mdimage/vmNetSet.jpg)
+![](https://wulasite.top/mdimage/vmNetSet.jpg)
 
    点击添加网络，选择要添加的名称，一般是VM0，点击确定，然后选择桥接模式，选择桥接到的网卡：
 

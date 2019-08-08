@@ -12,7 +12,7 @@ tags:
 
 首先 vim/etc/sysconfig/iptables
 
-![](https://qqx.im/mdimage/iptables.png)
+![](https://wulasite.top/mdimage/iptables.png)
 
 把22端口的规则注释掉，添加新端口规则。保存退出。
 
@@ -22,7 +22,7 @@ tags:
 vim /etc/ssh/sshd_config
 ```
 
-![](https://qqx.im/mdimage/Port.png)
+![](https://wulasite.top/mdimage/Port.png)
 
 找到这行，把注释取消，后面填上对应的端口。
 
@@ -41,7 +41,7 @@ service iptables restart
 cat /var/log/secure|awk '/Failed/{print $(NF-3)}'|sort|uniq -c|awk '{print $2"="$1;}'
 ```
 
-![](https://qqx.im/mdimage/boom.png)
+![](https://wulasite.top/mdimage/boom.png)
 
 ```
 cat /var/log/secure|awk '/Failed/{print $(NF-3)}'|sort|uniq -c | awk '$1>20 {print "sshd:",$2}'>>/etc/hosts.deny
