@@ -147,3 +147,35 @@ INFO  Generated: archives/index.html
 INFO  Generated: index.html
 INFO  4 files generated in 2.15 s
 INFO  Hexo is watching for file changes. Press Ctrl+C to exit.
+INFO  Start processing
+INFO  Files loaded in 1.25 s
+INFO  Generated: content.json
+INFO  Generated: index.html
+INFO  Generated: archives/index.html
+INFO  Generated: fonts/default-skin.b257fa.svg
+INFO  Generated: img/default-skin.png
+INFO  Generated: fonts/iconfont.45d7ee.svg
+INFO  Generated: fonts/iconfont.8c627f.woff
+INFO  Generated: fonts/iconfont.b322fa.eot
+INFO  Generated: fonts/tooltip.4004ff.svg
+INFO  Generated: img/preloader.gif
+INFO  Generated: img/scrollbar_arrow.png
+INFO  Generated: fonts/iconfont.16acc2.ttf
+INFO  Generated: archives/2017/09/index.html
+INFO  Generated: archives/2018/06/index.html
+INFO  Generated: archives/2018/09/index.html
+INFO  Generated: archives/2017/index.html
+INFO  Generated: archives/2018/index.html
+INFO  Generated: slider.e37972.js
+INFO  Generated: 2018/09/20/如何让hexo自动发布文章/index.html
+INFO  Generated: 2017/09/20/数据库做主从/index.html
+INFO  Generated: 2018/06/27/ELK搭建/index.html
+INFO  Generated: 2017/09/20/windows和Linux间做rsync/index.html
+INFO  Generated: 2017/09/20/虚拟机中设置静态IP/index.html
+INFO  Generated: 2017/09/20/给自己的小站上小绿锁https/index.html
+INFO  Generated: 2017/09/20/ban-Brute-Force-IP/index.html
+INFO  Generated: main.0cf68a.css
+INFO  Generated: main.0cf68a.js
+INFO  Generated: mobile.992cbe.js
+INFO  28 files generated in 1.9 s
+INFO  Hexo is watching for file changes. Press Ctrl+C to exit.
