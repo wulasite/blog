@@ -5,7 +5,9 @@ tags: writeup
 ---
 
 
-# DDCTF2019
+
+**目录**
+<!-- toc -->
 
 ## web
 
@@ -69,7 +71,7 @@ if(isset($uid))
 
 提交uid=&content=即可得到flag
 
-
+<!-- more -->
 
 ## WEB 签到题
 

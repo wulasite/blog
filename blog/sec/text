@@ -1,0 +1,1950 @@
+INFO  Start processing
+ERROR Theme config load failed.
+ERROR Process failed: _config.yml
+YAMLException: duplicated mapping key at line 80, column 1:
+    excerpt_link: more
+    ^
+    at generateError (/blog/blog/sec/node_modules/js-yaml/lib/js-yaml/loader.js:167:10)
+    at throwError (/blog/blog/sec/node_modules/js-yaml/lib/js-yaml/loader.js:173:9)
+    at storeMappingPair (/blog/blog/sec/node_modules/js-yaml/lib/js-yaml/loader.js:335:7)
+    at readBlockMapping (/blog/blog/sec/node_modules/js-yaml/lib/js-yaml/loader.js:1098:9)
+    at composeNode (/blog/blog/sec/node_modules/js-yaml/lib/js-yaml/loader.js:1359:12)
+    at readDocument (/blog/blog/sec/node_modules/js-yaml/lib/js-yaml/loader.js:1519:3)
+    at loadDocuments (/blog/blog/sec/node_modules/js-yaml/lib/js-yaml/loader.js:1575:5)
+    at Object.load (/blog/blog/sec/node_modules/js-yaml/lib/js-yaml/loader.js:1596:19)
+    at Hexo.yamlHelper (/blog/blog/sec/node_modules/hexo/lib/plugins/renderer/yaml.js:7:15)
+    at Hexo.tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Hexo.<anonymous> (/blog/blog/sec/node_modules/bluebird/js/release/method.js:15:34)
+    at Promise.then.text (/blog/blog/sec/node_modules/hexo/lib/hexo/render.js:60:20)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+INFO  Files loaded in 251 ms
+ERROR Render HTML failed: 2019/08/09/De1ctf-2019-writeup/index.html
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR Render HTML failed: 2019/05/01/adword_xctf/index.html
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR Render HTML failed: 2019/04/30/2019国赛/index.html
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR Render HTML failed: 2019/04/24/ddctf-writeup/index.html
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR Render HTML failed: 2019/01/25/DVWA搭建教程/index.html
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR Render HTML failed: 2017/10/12/shianbei2017Writeup/index.html
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR Render HTML failed: 2017/09/20/2017铁人三项华中区域选拔赛总结/index.html
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR Render HTML failed: 2017/09/20/图片爬虫/index.html
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR Render HTML failed: archives/index.html
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR Render HTML failed: archives/page/2/index.html
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR Render HTML failed: archives/2017/index.html
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR Render HTML failed: archives/2017/09/index.html
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR Render HTML failed: archives/2017/10/index.html
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR Render HTML failed: archives/2019/index.html
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR Render HTML failed: archives/2019/01/index.html
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR Render HTML failed: archives/2019/04/index.html
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR Render HTML failed: archives/2019/05/index.html
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR Render HTML failed: archives/2019/08/index.html
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR Render HTML failed: index.html
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR Render HTML failed: tags/writeup/index.html
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+ERROR /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+TypeError: /blog/blog/sec/themes/yilia/layout/layout.ejs:22
+    20|       <%- partial('_partial/footer') %>
+    21|     </div>
+ >> 22|     <%- partial('_partial/after-footer') %>
+    23|     <%- partial('_partial/tools') %>
+    24|     <%- partial('_partial/viewer') %>
+    25|   </div>
+
+/blog/blog/sec/themes/yilia/layout/_partial/after-footer.ejs:12
+    10| 		toc_hide_index: <%=theme.toc_hide_index%>,
+    11| 		root: "<%=config.root%>",
+ >> 12| 		innerArchive: <%=theme.smart_menu.innerArchive ? true : false%>,
+    13| 		showTags: <%=(theme.slider && theme.slider.showTags) ? true : false%>
+    14| 	}
+    15| </script>
+
+Cannot read property 'innerArchive' of undefined
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:38:42)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiledSync.locals [as _compiledSync] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:119:22)
+    at Theme._View.View.View.renderSync (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:48:23)
+    at Object.partial (/blog/blog/sec/node_modules/hexo/lib/plugins/helper/partial.js:34:15)
+    at eval (eval at compile (/blog/blog/sec/node_modules/ejs/lib/ejs.js:618:12), <anonymous>:24:17)
+    at returnedFn (/blog/blog/sec/node_modules/ejs/lib/ejs.js:653:17)
+    at Theme._View.View._compiled.locals [as _compiled] (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:123:48)
+    at Theme._View.View.View.render (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:29:15)
+    at _compiled.then.result (/blog/blog/sec/node_modules/hexo/lib/theme/view.js:40:23)
+    at tryCatcher (/blog/blog/sec/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/blog/blog/sec/node_modules/bluebird/js/release/promise.js:694:18)
+    at _drainQueueStep (/blog/blog/sec/node_modules/bluebird/js/release/async.js:138:12)
+    at _drainQueue (/blog/blog/sec/node_modules/bluebird/js/release/async.js:131:9)
+    at Async._drainQueues (/blog/blog/sec/node_modules/bluebird/js/release/async.js:147:5)
+    at Immediate.Async.drainQueues [as _onImmediate] (/blog/blog/sec/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:705:18)
+    at tryOnImmediate (timers.js:676:5)
+    at processImmediate (timers.js:658:5)
+INFO  0 files generated in 905 ms

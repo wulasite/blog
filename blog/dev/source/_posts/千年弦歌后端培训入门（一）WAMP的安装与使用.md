@@ -4,6 +4,8 @@ date: 2019-01-23 23:38:50
 tags: PHP
 ---
 
+**目录**
+<!-- toc -->
 
 1. [千年弦歌后端培训入门（一）WAMP的安装与使用](https://dev.wulasite.top/2019/01/23/%E5%8D%83%E5%B9%B4%E5%BC%A6%E6%AD%8C%E5%90%8E%E7%AB%AF%E5%9F%B9%E8%AE%AD%E5%85%A5%E9%97%A8%EF%BC%88%E4%B8%80%EF%BC%89WAMP%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/)
 2. [后端教程资料](https://gitlab.qnxg.net/qqx/backend_class)
@@ -16,7 +18,7 @@ tags: PHP
 ## 一、下载WAMP
 
 WAMP是啥？在开始之前需要了解一下这个之后会经常使用的软件。WAMP是windows apache mysql php的缩写，相对应的还有LAMP，L对应的就是linux了。而apache也是个应用，主要负责处理 发送到它所在的服务器 的http请求（http请求简而言之就是平常打开浏览器访问一个网页 就是向某个服务器发送http请求）； mysql是种关系型数据库，就是存放数据的地方，用的存储的结构好像是B/B+树，学好数据结构很重要啊；这里的php就是php语言的解释器，就像写C++还需要一个编译器，devc++用的是mingw。有了这三样就可以开始写PHP代码了。
-
+<!-- more -->
 大一新生可能连百度可能都不会用，所以先从百度开始记录吧。
 
 直接在[百度](https://www.baidu.com/)上搜索WAMP，就会出现如下

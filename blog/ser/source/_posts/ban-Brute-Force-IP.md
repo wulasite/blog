@@ -15,6 +15,7 @@ tags:
 ![](https://wulasite.top/mdimage/iptables.png)
 
 把22端口的规则注释掉，添加新端口规则。保存退出。
+<!-- more -->
 
 然后再 
 

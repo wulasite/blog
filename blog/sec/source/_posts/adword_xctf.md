@@ -7,6 +7,8 @@ tags: writeup
 adword里面题目很多，挑一些题目来记录
 
 
+**目录**
+<!-- toc -->
 
 ## FlatScience
 
@@ -34,6 +36,7 @@ adword里面题目很多，挑一些题目来记录
 
 加上这个参数提交得到源码
 
+<!-- more -->
 ```php
 <?php
 ob_start();

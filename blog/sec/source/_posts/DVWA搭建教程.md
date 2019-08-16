@@ -4,6 +4,9 @@ date: 2019-01-25 13:53:50
 tags: 
 ---
 
+
+**目录**
+<!-- toc -->
 DVWA(Damn Vulnerable Web Application)是一个包含一些基本WEB漏洞的web应用，特别适合新手入门WEB渗透，其中有不同的难度和源码展示，让小白更深入的理解漏洞产生的原因以及攻击的时候在代码层面发生了什么。本文主要讲述DVWA的搭建教程，而使用教程在[freebuf](https://www.freebuf.com/articles/web/123779.html)上面有比较完整的。而类似这种平台的还有webgoat,但会属于稍微进阶点的，偏实战的。
 
 网上其实有很多DVWA的搭建教程，但感觉都不怎么适合协会这边的新手，所以给出一套教程，也方便互动。
@@ -21,6 +24,7 @@ DVWA是基于PHP/MYSQL的，所以需要这些基本环境，而这些环境的�
 将刚才下载好的压缩包解压至web根目录，像wamp的就可以通过电脑左下角的wamp图标左键单击出来的功能列表中的www directory进入，这个在搭建教程中也有提到，而这个目录其实就是wamp安装目录下的www文件夹，像我的就是E:\wamp64\www
 
 ![](https://wulasite.top/mdimage/wamp/function.png)
+<!-- more -->
 
 解压完成后需要重命名成dvwa，方便访问和管理
 

@@ -6,7 +6,8 @@ tags:
 
 Centos下安装ELK
 
-
+**目录**
+<!-- toc -->
 
 [参考链接](https://ken.io/note/elk-deploy-guide )
 
@@ -17,6 +18,7 @@ Centos下安装ELK
    [logstash](https://www.elastic.co/downloads/logstash> )
 
    [kibana](https://www.elastic.co/downloads/kibana )
+<!-- more -->
 
 3. 将  elasticsearch的包移动到/usr/elk目录下，解压。然后cd进目录，运行  bin/elasticsearch  就会发现报错， 
    ![](https://wulasite.top/mdimage/elk/elk1.png)
