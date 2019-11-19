@@ -18,7 +18,7 @@ tags: writeup
 可以使用哈希扩展攻击更改action为read(误)
 更简单的是在params后面加个read,然后提交action为readscan，就可以绕过这个的cookie的检查并且可以读出文件，这题关键在于urlopen对于读取文件有另外的特殊方式
 <!-- more -->
-![](https://hackmd.summershrimp.com/uploads/upload_efafb2587d05e81dbfda08eb961b5b39.jpg)
+![](https://wulasite.top/mdimage/de1ctf/local-file.jpg)
 
 ```python
 # coding= utf-8

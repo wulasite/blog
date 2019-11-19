@@ -11,7 +11,7 @@ DVWA(Damn Vulnerable Web Application)是一个包含一些基本WEB漏洞的web�
 
 网上其实有很多DVWA的搭建教程，但感觉都不怎么适合协会这边的新手，所以给出一套教程，也方便互动。
 
-DVWA是基于PHP/MYSQL的，所以需要这些基本环境，而这些环境的教程在我的[另外一篇博客](https://dev.wulasite.top/2019/01/23/%E5%8D%83%E5%B9%B4%E5%BC%A6%E6%AD%8C%E5%90%8E%E7%AB%AF%E5%9F%B9%E8%AE%AD%E5%85%A5%E9%97%A8%EF%BC%88%E4%B8%80%EF%BC%89WAMP%E7%9A%84%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8/)有。
+DVWA是基于PHP/MYSQL的，所以需要这些基本环境，而这些环境的教程在我的[另外一篇博客](https://dev.wulasite.top/2019/01/23/千年弦歌后端培训入门（一）WAMP的安装与使用/)有。
 
 ## 一、下载
 
