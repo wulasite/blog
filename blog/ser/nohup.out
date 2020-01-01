@@ -2,3 +2,21 @@ INFO  Start processing
 INFO  Files loaded in 730 ms
 INFO  0 files generated in 1.98 s
 INFO  Hexo is watching for file changes. Press Ctrl+C to exit.
+INFO  Start processing
+INFO  Files loaded in 973 ms
+INFO  Generated: 2018/09/20/如何让hexo自动发布文章/index.html
+INFO  Generated: 2018/06/27/ELK搭建/index.html
+INFO  Generated: 2017/09/20/windows和Linux间做rsync/index.html
+INFO  Generated: 2017/09/20/给自己的小站上小绿锁https/index.html
+INFO  Generated: 2017/09/20/数据库做主从/index.html
+INFO  Generated: 2017/09/20/虚拟机中设置静态IP/index.html
+INFO  Generated: 2017/09/20/ban-Brute-Force-IP/index.html
+INFO  Generated: archives/index.html
+INFO  Generated: archives/2017/index.html
+INFO  Generated: archives/2018/09/index.html
+INFO  Generated: archives/2017/09/index.html
+INFO  Generated: index.html
+INFO  Generated: archives/2018/index.html
+INFO  Generated: archives/2018/06/index.html
+INFO  14 files generated in 2.33 s
+INFO  Hexo is watching for file changes. Press Ctrl+C to exit.
